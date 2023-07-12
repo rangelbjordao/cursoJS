@@ -3,8 +3,7 @@ function contar() {
     var inicio = document.querySelector('input#txtini')
     var fim = document.querySelector('input#txtfim')
     var passo = document.querySelector('input#txtpas')
-
-
+    
     if (inicio.value.length == 0) {
         res.innerHTML = `<br>Impossivel contar`
     } else if (Number(passo.value) == 0) {
