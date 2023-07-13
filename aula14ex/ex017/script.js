@@ -1,14 +1,17 @@
 function tabuada() {
-    var res = document.querySelector('div#res')
-    var num = document.querySelector('input#txtnum').value
+    let num = document.querySelector('input#txtnum')
+    let tab = document.querySelector('select#seltab')
 
-    res.innerHTML = 'Digite um numero acima <br>'
-    if (num.length == 0) {
-        alert(`Digite um numero`)
+    if (num.value.length == 0) {
+        window.alert(`Digite um numero`)
     } else {
-        for (let multiplicador = 1; multiplicador <= 10; multiplicador++) {
-            var resultado = num * multiplicador
-            res.innerHTML += `${num} X ${multiplicador} = ${resultado}<br>`
+        let n = Number(num.value)
+        tab.innerHTML = ''
+        for (let c = 1; c <= 10; c++) {
+            let item = document.createElement('option')
+            item.text = `${n} X ${c} = ${n * c}`
+            item.value = `tab${c}`
+            tab.appendChild(item)
         }
     }
 }
